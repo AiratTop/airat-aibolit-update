@@ -1,13 +1,13 @@
-# airat-aibolit-update
-Скрипт для быстрой установки и/или обновления [ai-bolit](https://revisium.com/ai/) от Айрата Халитова
+# airat-aibolit-update  
+A script for quickly installing and/or updating [ai-bolit](https://revisium.com/ai/), created by Airat Khalitov.
 
-**ВАЖНО:** 
-Сайт разработчиков ai-bolit https://revisium.com/ai теперь недоступен, поэтому официальных обновлений больше нет.
-В архиве лежит последняя доступная версия.
+**IMPORTANT:**  
+The official website of ai-bolit (https://revisium.com/ai) is no longer accessible, so there are no more official updates.  
+The archive contains the last available version.
 
-Т.к. разработчики забросили этот скрипт, он не будет находить новые актуальные уязвимости, которые придумали после последнего обновления скрипта. (_Если только мы сами не начнем его обновлять и поддерживать_)
+Since the developers have abandoned this script, it will not detect new vulnerabilities discovered after the last update. (_Unless we decide to maintain and update it ourselves._)
 
-## Установка и запуск:
+## Installation and Usage:
 ```bash
 git clone https://github.com/AiratTop/airat-aibolit-update
 
@@ -18,9 +18,9 @@ cd ai-bolit
 ./run-aibolit.sh
 ```
 
-**Примечания:** 
-- Свои файлы для сканирования нужно копировать в папку `ai-bolit`, а уже потом запускать в ней скрипт `./run-aibolit.sh`
-- Скрипт `./run-aibolit.sh` запускает по очереди два режима сканирования: обычный (`--mode=1`) и параноидальный (`--mode=2`)
-- При сканировании файлы должны быть доступны для скрипта. Надежнее запускать с правами рута
-- В параноидальном режиме возможны ложные срабатывания, т.к. он более чувствительный
-- Инструкция по использованию описана в файле `readme.txt`, история изменений в файле `CHANGELOG.md`
+**Notes:**  
+- Place the files you want to scan into the `ai-bolit` directory before running the script `./run-aibolit.sh`.  
+- The `./run-aibolit.sh` script sequentially runs two scanning modes: normal (`--mode=1`) and paranoid (`--mode=2`).  
+- During scanning, files must be accessible to the script. It’s safer to run it with root privileges.  
+- The paranoid mode may produce false positives as it is more sensitive.  
+- Detailed usage instructions are provided in the `readme.txt` file, and the changelog can be found in `CHANGELOG.md`.  
