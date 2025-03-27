@@ -9,7 +9,7 @@
 
 ## Установка и запуск:
 ```bash
-git clone https://github.com/AiratHalitov/airat-aibolit-update
+git clone https://github.com/AiratTop/airat-aibolit-update
 
 cd airat-aibolit-update
 
