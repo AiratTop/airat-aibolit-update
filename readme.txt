@@ -1,79 +1,76 @@
-Сканер AI-BOLIT предназначен для проверки сайта на вирусы и взлом. Его можно использовать как в профилактических целях для регулярной проверки сайта на вирус, так и для поиска хакерских шеллов, бэкдоров, фишинговых страниц, вирусных вставок, дорвеев, спам-ссылок и других вредоносных фрагментов в файлах сайта.
+AI-BOLIT Scanner Documentation (English Translation)
 
-Проверка может выполняться как непосредственно на хостинге (рекомендуется запуск сканера в режиме командной строки через SSH), так и на локальном компьютере под операционными системами MacOS X и *nix. Сканер AI-BOLIT проверяет файлы по собственной антивирусной базе, а также использует особые эвристические правила для обнаружения новых (пока еще не известных) вредоносных фрагментов. В случае обнаружения опасных фрагментов формирует отчет со списком обнаруженных файлов в html или текстовом формате.
+The AI-BOLIT scanner is designed to check websites for malware and hacking. It can be used both preventively for regular malware scans and to detect hacker shells, backdoors, phishing pages, malicious injections, doorway pages, spam links, and other harmful fragments in website files.
 
-В сканере есть два режима работы "обычный" и "параноидальный".
+The scanner can be run either directly on the hosting server (it is recommended to run the scanner in command-line mode via SSH) or on a local computer under MacOS X or *nix operating systems. AI-BOLIT checks files using its proprietary antivirus database and employs heuristic rules to detect new (previously unknown) malicious fragments. When harmful fragments are detected, the scanner generates a report listing the identified files in HTML or plain text format.
 
-Для диагностики взлома и заражения сайта достаточно проверить файлы сайта в обычном режиме. Он не дает ложных срабатываний и подходит для оценки заражения сайта или факта взлома. Для того чтобы детально проверить сайт на вирусы и хакерские скрипты, а также сформировать отчет для лечения сайта, необходимо проверять файлы в режиме "параноидальный". В данный отчет попадают не только известные вирусные фрагменты или хакерские скрипты, но и подозрительные фрагменты, которые необходимо изучить, так как потенциально они могут быть вредоносными.
+The scanner has two modes: "Normal" and "Paranoid."
 
-Иногда одни и те же фрагменты кода могут использоваться как в хакерских скриптах, так и в легитимных скриптах CMS. Поэтому в автоматическом режиме невозможно на 100% определить, является ли файл вредоносным. Данный файл будет отображаться в отчете и необходимо вручную определить его опасность. 
+To diagnose hacking and infection, it is sufficient to scan the website files in "Normal" mode. This mode provides accurate results without false positives and is suitable for assessing whether the website is infected or compromised. To thoroughly check the website for viruses and hacker scripts and generate a report for cleaning, the files should be scanned in "Paranoid" mode. This mode includes not only known malicious fragments or hacker scripts but also suspicious fragments that need to be reviewed as they may potentially be harmful.
 
---
-
-Помните, что достаточно одного пропущенного шелла или бэкдора, чтобы произошел повторный взлом и заражение 
-сайта, поэтому при лечении сайта используйте отчет, сформированный в "параноидальном" режиме и проверяйте все файлы, отмеченные 
-красным в отчете.
-
-Если вы запускаете сканер в режиме командной строки, то номер режима можно задать через параметр --mode.
-
-php ai-bolit.php --mode=1 - это проверка в обычном режиме (диагностика)
-php ai-bolit.php --mode=2 - это проверка в параноидальном режиме (для лечения)
-
-
-Посмотрите инструкции на страницах:
-
-https://revisium.com/kb/ai-bolit-console-faq.html
-https://revisium.com/kb/ai-bolit-masterclass.html
-
-
-Экспресс-проверка (не рекомендуется для лечения сайта):
-------------------------------------------------------------------
-
-1. в файле /ai-bolit/ai-bolit.php найти строку
-define('PASS', '....
-
-Вписать во вторых апострофах пароль, например Mypass16.
-
-define('PASS', 'MyPass234');
-
-2. скопировать из папки /ai-bolit/ файлы на сервер в корневой каталог
-
-3. открыть в браузере https://ваш_сайт/ai-bolit.php?p=MyPass234 и ждать отчета
-
-4. после отображения отчета удалить файлы от AI-BOLIT и сам скрипт с сайта
-
-Если что-то пошло не так, читаем FAQ: https://revisium.com/ai/faq.php
-
-
-
-
-Полная проверка (рекомендуется):
---------------------------------
-
-1. скопировать из папки /ai-bolit/ файлы на сервер в корневой каталог
-
-2. подключиться к серверу по ssh, перейти в папку сайта
-
-3. выполнить команду в командной строке
-   php ai-bolit.php
-
-4. дождаться окончания сканирования
-
-5. скопировать с сервера файл AI-BOLIT-REPORT-<дата>-<время>.html
-
-
-Если что-то пошло не так, посмотрите раздел часто-задаваемых вопросов: https://revisium.com/ai/faq.php
-
+Sometimes, the same code fragments may be used in both hacker scripts and legitimate CMS scripts. Therefore, it is impossible to automatically determine 100% whether a file is malicious. Such files will be displayed in the report and must be manually reviewed to assess their safety.
 
 ---
 
-https://revisium.com/ru/products/antivirus_for_ispmanager/ - Антивирус для ISPmanager Lite
-https://revisium.com/ru/products/antivirus_for_ispmanager/ - Антивирус для Plesk Onyx
+Remember that even one overlooked shell or backdoor can lead to repeated hacking and infection of the website. Therefore, when cleaning a website, use the report generated in "Paranoid" mode and thoroughly check all files marked in red in the report.
 
-https://revisium.com/ai/ - официальная страница AI-BOLIT
-https://revisium.com - мы лечим и защищаем сайты от взлома
-https://revisium.com/blog/ - наш блог
-http://vk.com/siteprotect - группа по безопасности сайтов
-http://twitter.com/revisium - наш твиттер @revisium
-https://www.facebook.com/Revisium - наша страница в Facebook
+If you are running the scanner in command-line mode, you can set the mode number using the --mode parameter.
 
+php ai-bolit.php --mode=1 - Normal mode (diagnosis)  
+php ai-bolit.php --mode=2 - Paranoid mode (for cleaning)
+
+Refer to the instructions on the following pages:
+
+https://revisium.com/kb/ai-bolit-console-faq.html  
+https://revisium.com/kb/ai-bolit-masterclass.html
+
+---
+
+Quick Scan (not recommended for cleaning the website):
+
+1. Open the file /ai-bolit/ai-bolit.php and find the line  
+   define('PASS', '....
+
+   Replace the second set of apostrophes with your password, e.g., Mypass16:  
+   define('PASS', 'MyPass234');
+
+2. Copy the files from the /ai-bolit/ folder to the root directory of the server.
+
+3. Open your browser and navigate to:  
+   https://your_site/ai-bolit.php?p=MyPass234  
+   Wait for the report to generate.
+
+4. After viewing the report, delete the AI-BOLIT files and the script from the website.
+
+If something goes wrong, refer to the FAQ: https://revisium.com/ai/faq.php
+
+---
+
+Full Scan (recommended):
+
+1. Copy the files from the /ai-bolit/ folder to the root directory of the server.
+
+2. Connect to the server via SSH and navigate to the website folder.
+
+3. Run the following command in the terminal:  
+   php ai-bolit.php
+
+4. Wait for the scan to complete.
+
+5. Copy the generated report file AI-BOLIT-REPORT-<date>-<time>.html from the server to your local machine.
+
+If something goes wrong, refer to the FAQ: https://revisium.com/ai/faq.php
+
+---
+
+Additional Resources:
+
+https://revisium.com/ru/products/antivirus_for_ispmanager/ - Antivirus for ISPmanager Lite  
+https://revisium.com/ru/products/antivirus_for_ispmanager/ - Antivirus for Plesk Onyx  
+
+https://revisium.com/ai/ - Official AI-BOLIT Page  
+https://revisium.com - Website Security and Protection  
+https://revisium.com/blog/ - Revisium Blog  
+http://vk.com/siteprotect - VK Group  
+http://twitter.com/revisium - Twitter @revisium  
+https://www.facebook.com/Revisium - Facebook Page  
